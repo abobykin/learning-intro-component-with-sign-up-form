@@ -6,11 +6,11 @@
     </article>
 
     <div class="form box--rounded">
-      <form @submit.prevent="onSubmit">
-        <BaseInput v-model="firstName" label="First Name" type="text" :error="firstNameError" />
-        <BaseInput v-model="lastName" label="Last Name" type="text" :error="lastNameError" />
-        <BaseInput v-model="email" label="Email" type="text" :error="emailError" />
-        <BaseInput v-model="password" label="Password" type="text" :error="passwordError" />
+      <form @submit.prevent="submit">
+        <BaseInput v-model="firstName" label="First Name" type="text" :error="errors.firstName" />
+        <BaseInput v-model="lastName" label="Last Name" type="text" :error="errors.lastName" />
+        <BaseInput v-model="email" label="Email" type="text" :error="errors.email" />
+        <BaseInput v-model="password" label="Password" type="text" :error="errors.password" />
 
         <button type="submit" class="form__button button--submit">Claim your free trial</button>
       </form>
@@ -29,27 +29,23 @@ import BaseInput from '../components/BaseInput.vue'
 
 export default {
   setup() {
-    function onSubmit() {
-      alert('Submitted')
-    }
-
     const validations = {
       firstName: (value) => {
-        const requiredMessage = 'This field is required'
+        const requiredMessage = 'First name cannot be empty'
         if (value === undefined || value === null) return requiredMessage
         if (!String(value).length) return requiredMessage
 
         return true
       },
       lastName: (value) => {
-        const requiredMessage = 'This field is required'
+        const requiredMessage = 'Last name cannot be empty'
         if (value === undefined || value === null) return requiredMessage
         if (!String(value).length) return requiredMessage
 
         return true
       },
       email: (value) => {
-        if (!value) return 'This field is required'
+        if (!value) return 'Email cannot be empty'
 
         const regex =
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -60,7 +56,7 @@ export default {
         return true
       },
       password: (value) => {
-        const requiredMessage = 'This field is required'
+        const requiredMessage = 'Password cannot be empty'
         if (value === undefined || value === null) return requiredMessage
         if (!String(value).length) return requiredMessage
 
@@ -68,25 +64,26 @@ export default {
       }
     }
 
-    useForm({
+    const { handleSubmit, errors } = useForm({
       validationSchema: validations
     })
 
-    const { value: firstName, errorMessage: firstNameError } = useField('firstName')
-    const { value: lastName, errorMessage: lastNameError } = useField('lastName')
-    const { value: email, errorMessage: emailError } = useField('email')
-    const { value: password, errorMessage: passwordError } = useField('password')
+    const { value: firstName } = useField('firstName')
+    const { value: lastName } = useField('lastName')
+    const { value: email } = useField('email')
+    const { value: password } = useField('password')
+
+    const submit = handleSubmit((values) => {
+      console.log('submit', values)
+    })
 
     return {
-      onSubmit,
-      firstName: firstName,
-      firstNameError: firstNameError,
-      lastName: lastName,
-      lastNameError: lastNameError,
-      email: email,
-      emailError: emailError,
-      password: password,
-      passwordError: passwordError
+      submit,
+      firstName,
+      lastName,
+      email,
+      password,
+      errors
     }
   },
   components: {

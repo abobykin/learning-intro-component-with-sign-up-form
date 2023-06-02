@@ -1,5 +1,5 @@
 <template>
-  <p aria-live="assertive" class="form__field__error--message" :id="id">
+  <p aria-live="assertive" class="form__field__error--message" :class="shown && 'shown'" :id="id">
     <slot />
   </p>
 </template>
@@ -10,6 +10,10 @@ export default {
     id: {
       type: [String, Number],
       required: true
+    },
+    shown: {
+      type: Boolean,
+      required: false
     }
   }
 }

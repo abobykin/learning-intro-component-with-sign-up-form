@@ -51,7 +51,7 @@ export default {
     <img src="/images/icon-error.svg" class="icon-error" alt="Exclamation point" />
   </div>
 
-  <BaseErrorMessage v-if="error" :id="`${uuid}-error`">
+  <BaseErrorMessage :shown="error.length > 0" :id="`${uuid}-error`">
     {{ error }}
   </BaseErrorMessage>
 </template>
