@@ -1,9 +1,9 @@
 <template>
   <div class="form-column">
-    <article class="notification box--rounded">
+    <div class="notification box--rounded">
       <strong>Try it free 7 days </strong>
       then $20/mo. thereafter
-    </article>
+    </div>
 
     <div class="form box--rounded">
       <form @submit.prevent="submit">
