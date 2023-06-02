@@ -215,7 +215,7 @@ h1 {
 
 @media screen and (min-width: 1280px) {
   #app {
-    background-image: url('images/bg-intro-desktop.png');
+    background-image: url('../assets/images/bg-intro-desktop.png');
     background-repeat: repeat;
   }
 
@@ -241,6 +241,7 @@ h1 {
   .greetings {
     text-align: left;
     max-width: 525px;
+    margin-top: 80px;
 
     h1 {
       margin-bottom: 25px;
@@ -249,7 +250,7 @@ h1 {
 
   .form {
     padding: 40px;
-    min-width: 430px;
+    min-width: 450px;
     &__field {
       padding: 15px 32px;
 
@@ -268,7 +269,7 @@ h1 {
 
 @media screen and (max-width: 980px) {
   #app {
-    background-image: url('images/bg-intro-mobile.png');
+    background-image: url('../assets/images/bg-intro-mobile.png');
     background-repeat: repeat;
   }
 }
