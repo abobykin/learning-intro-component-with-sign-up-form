@@ -1,9 +1,12 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import WelcomeGreetings from '../components/WelcomeGreetings.vue'
+import RequestTrialForm from '../components/RequestTrialForm.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <WelcomeGreetings />
+
+    <RequestTrialForm />
   </main>
 </template>

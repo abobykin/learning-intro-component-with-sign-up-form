@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/abobykin/learning-intro-component-with-sign-up-form)
-- Live Site URL: [GitHub Pages](https://abobykin.github.io/learning-intro-component-with-sign-up-form/)
+- Live Site URL: [GitHub Pages](https://guileless-churros-cc677d.netlify.app/)
 
 ## My process
 
@@ -40,7 +40,6 @@ Users should be able to:
 - Mobile-first workflow
 - [Vue.js](https://vuejs.org/guide/introduction.html) - Vue framework (Version 3+)
 - [VeeValidate](https://vee-validate.logaretm.com/v4/) - VeeValidate - library for forms validation
-- [Bulma](https://bulma.io/) - Bulma - UI framework
 - [SASS](https://sass-lang.com/) - SASS - CSS extension
 
 ### What I learned
