@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/abobykin/learning-intro-component-with-sign-up-form)
-- Live Site URL: [GitHub Pages](https://guileless-churros-cc677d.netlify.app/)
+- Live Site URL: [Netlify](https://guileless-churros-cc677d.netlify.app/)
 
 ## My process
 
